@@ -15,8 +15,8 @@
     <nav>
         <ul>
             <li class="profile-button" onclick="toggleProfile()">Profil</li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="register.php">Register</a></li>
+            <li ><a class="logout-button" href="logout.php">Wyloguj się</a></li>
+
         </ul>
     </nav>
 </header>
@@ -42,7 +42,7 @@
 			<div class="lower-tiles">
 				<button class="btn" name="psychology" onclick="toCarRegisterPage()">Dodaj Samochód</button>
 				<button class="btn" name="teambuilding" onclick="toCarViewPage()">Przejrzyj Samochód</button>
-				<button class="btn" name="psychotests" onclick="toCarViewPage()">>Warsztaty</button>
+				<button class="btn" name="psychotests" onclick="toCarViewPage()">Warsztaty</button>
 			</div>
 
 		</div>

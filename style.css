@@ -8,32 +8,48 @@ body {
     padding: 0;
     margin: 0;
     z-index: -1;
-    background-color: #000;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000;
 }
 
 header {
     height: 60px;
     background-color: #f2f2f2;
     box-shadow: 0 0 10px #000;
+    display:flex;
+    flex-direction: row-reverse;
+    margin: 0
+}
+nav {
+    margin:0
 }
 
-ul {
-    float: right;
-    position: relative;
-    right: 10%;
-}
 
 ul li {
     display: inline;
     list-style: none;
 }
 
-ul li a {
+ul li a ,.profile-button {
     text-decoration: none;
     color: #000000;
     font-size: 18px;
-    padding: 0px 0px 0px 20px;
+    padding: 20px;
+
+
+}
+.logout-button{
+    color: #d11d1d;   
+    padding: 20px;
+
+}
+.logout-button:hover{
+    color: #fc0909;   
+    padding: 20px;
+
+}
+.profile-button:hover{
+    color: rgb(129, 121, 121);
 }
 .profile-wrapper{
     display: none;
@@ -58,6 +74,7 @@ ul li a {
     background-color:#131e1f;
     border: none;
     border-radius: 5px;
+    display: block;
   }
   .prof-btn:hover{
     background-color:#131e1f;
@@ -68,7 +85,8 @@ footer {
     bottom: 0%;
     width: 100%;
     height: 60px;
-    background-color: #000;
+    background-color: #f2f2f2;
+    color: #000;
     box-shadow: 0 0 10px #000;
     text-align: center;
     margin: 0 auto;
@@ -119,10 +137,10 @@ button {
 .header {
     width: 85%;
     margin: 50px auto 0px;
-    color: #000;
-    background: #ffffff;
+    color: #fff;
+    background: #000;
     text-align: center;
-    /* border: 1px solid #ffffff; */
+    border: 1px solid #ffffff;
     border-bottom: none;
     border-radius: 10px 10px 0px 0px;
     padding: 20px;
@@ -136,7 +154,7 @@ button {
     padding: 20px;
     background: #000;
   
-    /* border: 1px solid #B0C4DE; */
+    border: 1px solid #B0C4DE;
     background: white;
     border-radius: 0px 0px 10px 10px;
   }
