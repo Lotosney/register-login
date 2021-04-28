@@ -17,7 +17,10 @@
     <h1>Zaloguj się</h1>
     <p> Nie masz konta? <a href="../registration/register.php">Zarejestruj się!</a></p>
 
-    <form action="login/login-back.php" method="post">
+    <form action="login-back.php" method="post">
+    <?php if (isset($_GET['error'])) { ?>
+				<p class="error"><?php echo $_GET['error']; ?></p>
+			<?php } ?>
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Hasło">
         <button type="submit" name="submit">Zaloguj się</button>
