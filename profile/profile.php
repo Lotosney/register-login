@@ -2,6 +2,7 @@
 session_start();
 require_once '../includes/database.php';
 require_once '../registration/register-back.php';
+if (isset($_SESSION['user_Id']) && isset($_SESSION['email'])) {
 ?>
 
 <!DOCTYPE html>
@@ -64,5 +65,14 @@ require_once '../registration/register-back.php';
 require_once '../includes/footer.php';
 ?>
 
+</html>
+<?php
+	} else {
+		header("Location: ./login/login.php");
+		exit();
+	}
+
+    
+?>
 
 
