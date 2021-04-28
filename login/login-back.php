@@ -30,6 +30,9 @@ if (isset($_POST['submit'])) {
                     session_start();
                     $_SESSION['sessionId'] = $row['id'];
                     $_SESSION['sessionUser'] = $row['email'];
+                    $_SESSION['firstname'] = $row['firstname'];
+                    $_SESSION['lastname'] = $row['lastname'];
+                    $_SESSION['phone'] = $row['phone'];
                     header("Location: ../index.php?success=Zalogowano");
                     exit();
                 } else {
