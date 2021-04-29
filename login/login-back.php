@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
                     exit();
                 } elseif ($passCheck == true) {
                     session_start();
-                    $_SESSION['user_Id'] = $row['user_id'];
+                    $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['firstname'] = $row['firstname'];
                     $_SESSION['lastname'] = $row['lastname'];

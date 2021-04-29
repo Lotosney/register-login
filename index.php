@@ -2,7 +2,7 @@
 	require_once './includes/database.php';
     require_once './registration/register-back.php';
     session_start();	
-	if (isset($_SESSION['user_Id']) && isset($_SESSION['email'])) {
+	if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
 		?>
 		<html>
 		<head>

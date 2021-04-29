@@ -2,7 +2,7 @@
 session_start();
 require_once '../includes/database.php';
 require_once '../registration/register-back.php';
-if (isset($_SESSION['user_Id']) && isset($_SESSION['email'])) {
+if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ if (isset($_SESSION['user_Id']) && isset($_SESSION['email'])) {
                 <h2>Imię: <?php echo $_SESSION['firstname']; ?></h2>
                 <h2>Nazwisko: <?php echo $_SESSION['lastname']; ?></h2>
                 <h2>Telefon: <?php echo $_SESSION['phone']; ?></h2>
-                <h2>Mail: <?php echo $_SESSION['sessionUser']; ?></h2>
+                <h2>Mail: <?php echo $_SESSION['email']; ?></h2>
                 <div class="input-group">
                     <button type='button' class='btn' onclick="toFirstNamePage()">Zmień Imię</button>
                 </div>
