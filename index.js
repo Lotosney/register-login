@@ -13,3 +13,6 @@ toProfilePage = () => {
 toCarAddPage = () => {
   location.replace('./car-add/car-add.php')
 }
+toCarViewPage = () => {
+  location.replace('./car-view/car-list.php')
+}

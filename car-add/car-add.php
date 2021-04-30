@@ -130,7 +130,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
             </form>
         </div>
     </body>
-
+    <?php
+require_once '../includes/footer.php';
+?>
     </html>
 <?php
 } else {
