@@ -20,11 +20,7 @@ header {
 nav {
     margin:0
 }
-/* ul {
-    float: right;
-    position: relative;
-    right: 10%;
-} */
+
 
 ul li {
     display: inline;
@@ -95,16 +91,7 @@ input {
     background-color: #f2f2f2;
 }
 
-/* button {
-    width: 240px;
-    height: 60px;
-    background-color: #000000;
-    color: #ffffff;
-    margin:  auto;
-    display: flex;
-    padding: 20px 70px;
 
-} */
 .wrapper{
     width: fit-content;
     margin: 50px auto 0px;;

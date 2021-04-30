@@ -41,7 +41,7 @@
 						<button class="btn" name="tools" onclick="toCarViewPage()">Dane </button>
 					</div>
 					<div class="lower-tiles">
-						<button class="btn" name="psychology" onclick="toCarRegisterPage()">Dodaj Samochód</button>
+						<button class="btn" name="car_add" onclick="toCarAddPage()">Dodaj Samochód</button>
 						<button class="btn" name="teambuilding" onclick="toCarViewPage()">Przejrzyj Samochód</button>
 						<button class="btn" name="psychotests" onclick="toCarViewPage()">Warsztaty</button>
 					</div>

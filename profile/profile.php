@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
     <main>
     <div class=wrapper>
         <div class="header">
-            <h1>Profil</h1>
+            <h2>Profil</h2>
         </div>
         <div class="content">
 
