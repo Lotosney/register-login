@@ -9,11 +9,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    function edit_row($row){
-        echo '<form class="edit_row" method="post" action="car-view-edit.php">';
-        echo '<input type="submit" value="Edytuj">';
-        echo '</form>';
-    }
+
 
 ?>
 
@@ -40,37 +36,49 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
         <main>
             <div class=wrapper>
                 <div class="header">
-                    <h2>Przegląd Samochodu</h2>
+                    <h2>Przegląd Samochodów</h2>
                 </div>
                 <div class="content">
+                    <?php if (isset($_GET['error'])) { ?>
+                        <p class="error"><?php echo $_GET['error']; ?></p>
+                    <?php } ?>
+
+                    <?php if (isset($_GET['success'])) { ?>
+                        <p class="success"><?php echo $_GET['success']; ?></p>
+                    <?php } ?>
                     <table>
                         <tr>
                             <th>Marka</th>
                             <th>Model</th>
                             <th>Rocznik</th>
                             <th>Vin</th>
+
                             <?php
                             while ($row = $result->fetch_assoc()) {
                             ?>
                         <tr>
+                            <td hidden><?php echo $row['car_id']; ?></td>
                             <td><?php echo $row['brand']; ?></td>
                             <td><?php echo $row['model']; ?></td>
                             <td><?php echo $row['production_year']; ?></td>
                             <td><?php echo $row['vin_number']; ?></td>
-                            <td><?php echo edit_row($row); ?></td>
+                            <td><a class="btn" href="update-process.php?car_id=<?php echo $row["car_id"]; ?>">Update</a></td>
                         </tr>
                     <?php
                             }
                     ?>
                     </table>
-
                 </div>
         </main>
     </body>
     <?php
-require_once '../includes/footer.php';
-?>
+    require_once '../includes/footer.php';
+    ?>
+
     </html>
 <?php
+} else {
+	header("Location: ../login/login.php");
+	exit();
 }
 ?>

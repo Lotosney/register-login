@@ -1,5 +1,5 @@
 toggleProfile = () => {
-  let x = document.getElementById("profile-wrapper");
+  let x = document.getElementById("edition");
   if (x.style.display === "none") {
     x.style.display = "flex";
   } else {
