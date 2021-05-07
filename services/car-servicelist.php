@@ -4,8 +4,9 @@ require '../includes/database.php';
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
     $id =  $_SESSION['user_id'];
-    $stmt = $conn->prepare("SELECT * FROM cars WHERE user_id= ?");
-    $stmt->bind_param("i", $id);
+    $car_id=$_GET['car_id'];
+    $stmt = $conn->prepare("SELECT * FROM services WHERE car_id=? AND user_id= ?");
+    $stmt->bind_param("ii",$car_id, $id);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -13,17 +14,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
 
 ?>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="pl">
 
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="car-list.css">
-        <title>Lista Samochodów</title>
+        <link rel="stylesheet" type="text/css" href="car-servicelist.css">
+        <title>Lista Napraw</title>
     </head>
-
     <body>
         <header>
             <nav>
@@ -33,6 +33,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
                 </ul>
             </nav>
         </header>
+
         <main>
             <div class=wrapper>
                 <div class="header">
@@ -48,22 +49,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
                     <?php } ?>
                     <table>
                         <tr>
-                            <th>Marka</th>
-                            <th>Model</th>
-                            <th>Rocznik</th>
-                            <th>Vin</th>
+                            <th>Data</th>
+                            <th>Nazwa</th>
+                            <th class="description">Opis</th>
+
 
                             <?php
                             while ($row = $result->fetch_assoc()) {
                             ?>
                         <tr>
-                            <td hidden><?php echo $row['car_id']; ?></td>
-                            <td><?php echo $row['brand']; ?></td>
-                            <td><?php echo $row['model']; ?></td>
-                            <td><?php echo $row['production_year']; ?></td>
-                            <td><?php echo $row['vin_number']; ?></td>
-                            <td><a class="btn" href="update-process.php?car_id=<?php echo $row["car_id"]; ?>">Update</a></td>
-                            <td><a class="btn" href="../services/car-servicelist.php?car_id=<?php echo $row["car_id"]; ?>">Naprawy</a></td>
+                            <td hidden><?php echo $row['service_id']; ?></td>
+                            <td><?php echo $row['service_date']; ?></td>
+                            <td><?php echo $row['service_name']; ?></td>
+                            <td class="description" id="description"><div style="height: 50px; overflow-y:scroll;"><?php echo $row['service_description']; ?></div></td>
                         </tr>
                     <?php
                             }
@@ -72,11 +70,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
                 </div>
         </main>
     </body>
-    <?php
-    require_once '../includes/footer.php';
-    ?>
-
     </html>
+
 <?php
 } else {
 	header("Location: ../login/login.php");
